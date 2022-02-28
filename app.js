@@ -3,6 +3,7 @@ const errorMsg = document.getElementById('error-msg');
 const spinner = document.getElementById('spinner');
 const searchBtn =() =>{
     const searchInputBox = document.getElementById('search-input-box');
+    errorMsg.innerText='';
     spinner.classList.remove('d-none');
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputBox.value}`;
     fetch(url)
