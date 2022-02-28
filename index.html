@@ -16,7 +16,12 @@
         <input id="search-input-box" type="text" class="form-control" placeholder="Enter food Name" aria-label="Recipient's username" aria-describedby="button-addon2">
         <button onclick="searchBtn()" class="btn btn-outline-secondary" type="button" id="button-search">Search</button>
       </div>
-
+    <!-- loading area -->
+    <div class="d-flex justify-content-center">
+        <div id="spinner" class="spinner-border d-none" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     <!-- error area -->
     <h3 id="error-msg" class="text-center text-danger"></h3>
     <!-- search result area -->

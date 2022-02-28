@@ -1,7 +1,9 @@
 const searchResultContainer = document.getElementById('result-container');
 const errorMsg = document.getElementById('error-msg');
+const spinner = document.getElementById('spinner');
 const searchBtn =() =>{
     const searchInputBox = document.getElementById('search-input-box');
+    spinner.classList.remove('d-none');
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputBox.value}`;
     fetch(url)
     .then(res => res.json())
@@ -9,6 +11,7 @@ const searchBtn =() =>{
     searchInputBox.value ='';
 }
 const showMeals = (meals) =>{
+    spinner.classList.add('d-none');
     searchResultContainer.innerHTML='';
     if(meals == null){
         errorMsg.innerText='No match Found!';
