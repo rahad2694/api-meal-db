@@ -1,8 +1,17 @@
+const searchBtnId = document.getElementById('button-search');
+const searchInputBox = document.getElementById('search-input-box');
+
+searchInputBox.addEventListener('keypress',(event)=>{
+    if(event.keyCode == 13){
+        searchBtnId.click();
+    }
+});
+
+
 const searchResultContainer = document.getElementById('result-container');
 const errorMsg = document.getElementById('error-msg');
 const spinner = document.getElementById('spinner');
 const searchBtn =() =>{
-    const searchInputBox = document.getElementById('search-input-box');
     errorMsg.innerText='';
     spinner.classList.remove('d-none');
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputBox.value}`;
